@@ -17,7 +17,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         self.window = UIWindow(windowScene: windowScene)
         
         let loginPresenter = LoginPresenter()
-        let loginInteractor = LoginInteractor(loginPresenter: loginPresenter)
+        let loginInteractor = LoginInteractor(loginPresenter: loginPresenter, userClient: JPHUserClient())
         let loginViewController = LoginViewController(loginInteractor: loginInteractor)
         loginPresenter.loginView = loginViewController
         

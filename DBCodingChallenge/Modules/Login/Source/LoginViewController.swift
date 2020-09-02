@@ -9,10 +9,11 @@
 import UIKit
 
 protocol LoginViewProtocol: UIViewController {
-    
+    func showLoginSucceeded(with userViewModel: UserViewModel)
+    func showLoginFailed()
 }
 
-class LoginViewController: UIViewController, LoginViewProtocol {
+class LoginViewController: UIViewController {
     let loginInteractor: LoginInteractorProtocol
     
     let verticalStackView = UIStackView()
@@ -22,6 +23,7 @@ class LoginViewController: UIViewController, LoginViewProtocol {
     let userIdTextField = UITextField()
     let userIdTextFieldBorder = UIView()
     let loginButton = UIButton()
+    let loginFeedbackLabel = UILabel()
     
     var bottomConstraint: NSLayoutConstraint!
     
@@ -56,6 +58,7 @@ class LoginViewController: UIViewController, LoginViewProtocol {
         verticalStackView.addArrangedSubview(horizontalStackView)
         verticalStackView.addArrangedSubview(UIView())
         verticalStackView.addArrangedSubview(loginButton)
+        verticalStackView.addArrangedSubview(loginFeedbackLabel)
         
         horizontalStackView.addArrangedSubview(userIdLabel)
         horizontalStackView.addArrangedSubview(innerVerticalStackView)
@@ -77,6 +80,9 @@ class LoginViewController: UIViewController, LoginViewProtocol {
         loginButton.setTitle("LOGIN", for: .normal)
         loginButton.titleLabel?.font = .systemFont(ofSize: 28)
         loginButton.addTarget(self, action: #selector(loginButtonTapped), for: .touchUpInside)
+        
+        loginFeedbackLabel.font = .systemFont(ofSize: 14)
+        loginFeedbackLabel.textColor = .black
     }
     
     private func setupLayout() {
@@ -133,5 +139,25 @@ class LoginViewController: UIViewController, LoginViewProtocol {
     
     @objc func loginButtonTapped() {
         print("login button tapped")
+        if let userIdText = userIdTextField.text,
+            let userId = Int(userIdText) {
+            loginInteractor.login(with: userId)
+        } else {
+            loginFeedbackLabel.text = "Eingabe inkorrekt"
+        }
+    }
+}
+
+extension LoginViewController: LoginViewProtocol {
+    func showLoginSucceeded(with userViewModel: UserViewModel) {
+        DispatchQueue.main.async {
+            self.loginFeedbackLabel.text = "Login erfolgreich. Hallo \(userViewModel.name)!"
+        }
+    }
+    
+    func showLoginFailed() {
+        DispatchQueue.main.async {
+            self.loginFeedbackLabel.text = "Login fehlgeschagen"
+        }
     }
 }
