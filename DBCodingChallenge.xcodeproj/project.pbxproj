@@ -9,12 +9,15 @@
 /* Begin PBXBuildFile section */
 		CF2210E524FF8B7400FA36D6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF2210E424FF8B7400FA36D6 /* AppDelegate.swift */; };
 		CF2210E724FF8B7400FA36D6 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF2210E624FF8B7400FA36D6 /* SceneDelegate.swift */; };
-		CF2210E924FF8B7400FA36D6 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF2210E824FF8B7400FA36D6 /* ViewController.swift */; };
 		CF2210EC24FF8B7400FA36D6 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CF2210EA24FF8B7400FA36D6 /* Main.storyboard */; };
 		CF2210EE24FF8B7800FA36D6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CF2210ED24FF8B7800FA36D6 /* Assets.xcassets */; };
 		CF2210F124FF8B7800FA36D6 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CF2210EF24FF8B7800FA36D6 /* LaunchScreen.storyboard */; };
 		CF2210FC24FF8B7800FA36D6 /* DBCodingChallengeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF2210FB24FF8B7800FA36D6 /* DBCodingChallengeTests.swift */; };
 		CF22110724FF8B7800FA36D6 /* DBCodingChallengeUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF22110624FF8B7800FA36D6 /* DBCodingChallengeUITests.swift */; };
+		CF22111724FF8E5F00FA36D6 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF22111624FF8E5F00FA36D6 /* LoginViewController.swift */; };
+		CF22111924FF8EA200FA36D6 /* LoginInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF22111824FF8EA200FA36D6 /* LoginInteractor.swift */; };
+		CF22111B24FF8ECC00FA36D6 /* LoginPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF22111A24FF8ECC00FA36D6 /* LoginPresenter.swift */; };
+		CF22111D24FF8EFB00FA36D6 /* LoginWireframe.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF22111C24FF8EFB00FA36D6 /* LoginWireframe.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -38,7 +41,6 @@
 		CF2210E124FF8B7400FA36D6 /* DBCodingChallenge.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DBCodingChallenge.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CF2210E424FF8B7400FA36D6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CF2210E624FF8B7400FA36D6 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		CF2210E824FF8B7400FA36D6 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		CF2210EB24FF8B7400FA36D6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		CF2210ED24FF8B7800FA36D6 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		CF2210F024FF8B7800FA36D6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -49,6 +51,10 @@
 		CF22110224FF8B7800FA36D6 /* DBCodingChallengeUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DBCodingChallengeUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		CF22110624FF8B7800FA36D6 /* DBCodingChallengeUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DBCodingChallengeUITests.swift; sourceTree = "<group>"; };
 		CF22110824FF8B7800FA36D6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		CF22111624FF8E5F00FA36D6 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		CF22111824FF8EA200FA36D6 /* LoginInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginInteractor.swift; sourceTree = "<group>"; };
+		CF22111A24FF8ECC00FA36D6 /* LoginPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginPresenter.swift; sourceTree = "<group>"; };
+		CF22111C24FF8EFB00FA36D6 /* LoginWireframe.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginWireframe.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,9 +105,9 @@
 		CF2210E324FF8B7400FA36D6 /* DBCodingChallenge */ = {
 			isa = PBXGroup;
 			children = (
+				CF22111424FF8E0400FA36D6 /* Modules */,
 				CF2210E424FF8B7400FA36D6 /* AppDelegate.swift */,
 				CF2210E624FF8B7400FA36D6 /* SceneDelegate.swift */,
-				CF2210E824FF8B7400FA36D6 /* ViewController.swift */,
 				CF2210EA24FF8B7400FA36D6 /* Main.storyboard */,
 				CF2210ED24FF8B7800FA36D6 /* Assets.xcassets */,
 				CF2210EF24FF8B7800FA36D6 /* LaunchScreen.storyboard */,
@@ -126,6 +132,49 @@
 				CF22110824FF8B7800FA36D6 /* Info.plist */,
 			);
 			path = DBCodingChallengeUITests;
+			sourceTree = "<group>";
+		};
+		CF22111424FF8E0400FA36D6 /* Modules */ = {
+			isa = PBXGroup;
+			children = (
+				CF22111524FF8E1300FA36D6 /* Login */,
+			);
+			path = Modules;
+			sourceTree = "<group>";
+		};
+		CF22111524FF8E1300FA36D6 /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				CF22112024FF8F7100FA36D6 /* Source */,
+				CF22111F24FF8F5E00FA36D6 /* Tests */,
+			);
+			path = Login;
+			sourceTree = "<group>";
+		};
+		CF22111E24FF8F5500FA36D6 /* DataClients */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = DataClients;
+			sourceTree = "<group>";
+		};
+		CF22111F24FF8F5E00FA36D6 /* Tests */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Tests;
+			sourceTree = "<group>";
+		};
+		CF22112024FF8F7100FA36D6 /* Source */ = {
+			isa = PBXGroup;
+			children = (
+				CF22111E24FF8F5500FA36D6 /* DataClients */,
+				CF22111624FF8E5F00FA36D6 /* LoginViewController.swift */,
+				CF22111824FF8EA200FA36D6 /* LoginInteractor.swift */,
+				CF22111A24FF8ECC00FA36D6 /* LoginPresenter.swift */,
+				CF22111C24FF8EFB00FA36D6 /* LoginWireframe.swift */,
+			);
+			path = Source;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -259,9 +308,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CF2210E924FF8B7400FA36D6 /* ViewController.swift in Sources */,
+				CF22111924FF8EA200FA36D6 /* LoginInteractor.swift in Sources */,
+				CF22111724FF8E5F00FA36D6 /* LoginViewController.swift in Sources */,
+				CF22111D24FF8EFB00FA36D6 /* LoginWireframe.swift in Sources */,
 				CF2210E524FF8B7400FA36D6 /* AppDelegate.swift in Sources */,
 				CF2210E724FF8B7400FA36D6 /* SceneDelegate.swift in Sources */,
+				CF22111B24FF8ECC00FA36D6 /* LoginPresenter.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
