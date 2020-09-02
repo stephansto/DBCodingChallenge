@@ -18,6 +18,7 @@
 		CF22111B24FF8ECC00FA36D6 /* LoginPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF22111A24FF8ECC00FA36D6 /* LoginPresenter.swift */; };
 		CF22111D24FF8EFB00FA36D6 /* LoginWireframe.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF22111C24FF8EFB00FA36D6 /* LoginWireframe.swift */; };
 		CF22112224FF9D2B00FA36D6 /* LoginWireframeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF22112124FF9D2B00FA36D6 /* LoginWireframeTests.swift */; };
+		CF22112724FFC39100FA36D6 /* UIView+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF22112624FFC39100FA36D6 /* UIView+Extensions.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -55,6 +56,7 @@
 		CF22111A24FF8ECC00FA36D6 /* LoginPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginPresenter.swift; sourceTree = "<group>"; };
 		CF22111C24FF8EFB00FA36D6 /* LoginWireframe.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginWireframe.swift; sourceTree = "<group>"; };
 		CF22112124FF9D2B00FA36D6 /* LoginWireframeTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginWireframeTests.swift; sourceTree = "<group>"; };
+		CF22112624FFC39100FA36D6 /* UIView+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Extensions.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -105,6 +107,7 @@
 		CF2210E324FF8B7400FA36D6 /* DBCodingChallenge */ = {
 			isa = PBXGroup;
 			children = (
+				CF22112524FFC37A00FA36D6 /* Extensions */,
 				CF22111424FF8E0400FA36D6 /* Modules */,
 				CF2210E424FF8B7400FA36D6 /* AppDelegate.swift */,
 				CF2210E624FF8B7400FA36D6 /* SceneDelegate.swift */,
@@ -175,6 +178,14 @@
 				CF22111C24FF8EFB00FA36D6 /* LoginWireframe.swift */,
 			);
 			path = Source;
+			sourceTree = "<group>";
+		};
+		CF22112524FFC37A00FA36D6 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				CF22112624FFC39100FA36D6 /* UIView+Extensions.swift */,
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -307,6 +318,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CF22112724FFC39100FA36D6 /* UIView+Extensions.swift in Sources */,
 				CF22111924FF8EA200FA36D6 /* LoginInteractor.swift in Sources */,
 				CF22111724FF8E5F00FA36D6 /* LoginViewController.swift in Sources */,
 				CF22111D24FF8EFB00FA36D6 /* LoginWireframe.swift in Sources */,
@@ -479,6 +491,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 6UD69FXQDL;
 				INFOPLIST_FILE = DBCodingChallenge/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -496,6 +509,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 6UD69FXQDL;
 				INFOPLIST_FILE = DBCodingChallenge/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
