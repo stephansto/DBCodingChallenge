@@ -13,5 +13,5 @@ protocol LoginPresenterProtocol {
 }
 
 class LoginPresenter: LoginPresenterProtocol {
-    
+    weak var loginView: LoginViewProtocol?
 }

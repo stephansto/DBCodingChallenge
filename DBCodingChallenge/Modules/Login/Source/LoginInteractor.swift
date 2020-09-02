@@ -13,5 +13,9 @@ protocol LoginInteractorProtocol {
 }
 
 class LoginInteractor: LoginInteractorProtocol {
+    let loginPresenter: LoginPresenterProtocol
     
+    init(loginPresenter: LoginPresenterProtocol) {
+        self.loginPresenter = loginPresenter
+    }
 }
