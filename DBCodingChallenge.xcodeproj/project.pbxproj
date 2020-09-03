@@ -27,7 +27,6 @@
 		CF38E07424FFE32C0046B7C1 /* Users.json in Resources */ = {isa = PBXBuildFile; fileRef = CF38E07224FFE32C0046B7C1 /* Users.json */; };
 		CF38E07624FFE3A80046B7C1 /* JPHUserClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF38E07524FFE3A80046B7C1 /* JPHUserClient.swift */; };
 		CF38E07924FFE5B20046B7C1 /* UserViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF38E07824FFE5B20046B7C1 /* UserViewModel.swift */; };
-		CF38E07A24FFE5B20046B7C1 /* UserViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF38E07824FFE5B20046B7C1 /* UserViewModel.swift */; };
 		CF38E07C24FFF43E0046B7C1 /* LoginViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF38E07B24FFF43E0046B7C1 /* LoginViewControllerTests.swift */; };
 		CF38E07E250003580046B7C1 /* LoginInteractorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF38E07D250003580046B7C1 /* LoginInteractorTests.swift */; };
 		CFD3D3C52500379700836D83 /* PostListWireframe.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFD3D3C42500379700836D83 /* PostListWireframe.swift */; };
@@ -413,7 +412,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				CF38E07C24FFF43E0046B7C1 /* LoginViewControllerTests.swift in Sources */,
-				CF38E07A24FFE5B20046B7C1 /* UserViewModel.swift in Sources */,
 				CF22112224FF9D2B00FA36D6 /* LoginWireframeTests.swift in Sources */,
 				CF38E07E250003580046B7C1 /* LoginInteractorTests.swift in Sources */,
 				CFD4005125001A7E00A557C0 /* LoginPresenterTests.swift in Sources */,
