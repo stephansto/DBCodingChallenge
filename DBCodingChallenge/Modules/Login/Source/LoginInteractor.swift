@@ -25,7 +25,7 @@ class LoginInteractor: LoginInteractorProtocol {
         userClient.fetchUserWith(userId: userId) { [weak self] result in
             switch result {
             case .success(let user):
-                // TODO: save user "credentials"
+                CurrentUser.shared.user = user
                 self?.loginPresenter.loginSucceeded(with: user)
             case .failure(let error):
                 print(error)

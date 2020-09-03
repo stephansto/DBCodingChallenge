@@ -34,11 +34,17 @@
 		CFD4005125001A7E00A557C0 /* LoginPresenterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFD4005025001A7E00A557C0 /* LoginPresenterTests.swift */; };
 		CFDD22202500E23700FA89A7 /* PostListInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFDD221F2500E23700FA89A7 /* PostListInteractor.swift */; };
 		CFDD22232500E28200FA89A7 /* PostListPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFDD22222500E28200FA89A7 /* PostListPresenter.swift */; };
-		CFDD22262500E34900FA89A7 /* PostViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFDD22252500E34900FA89A7 /* PostViewModel.swift */; };
+		CFDD22262500E34900FA89A7 /* PostListPostViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFDD22252500E34900FA89A7 /* PostListPostViewModel.swift */; };
 		CFDD22282500E51300FA89A7 /* PostClientProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFDD22272500E51300FA89A7 /* PostClientProtocol.swift */; };
 		CFDD222A2500E62F00FA89A7 /* JPHPostClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFDD22292500E62F00FA89A7 /* JPHPostClient.swift */; };
 		CFDD222C2500E9A300FA89A7 /* WireframeProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFDD222B2500E9A300FA89A7 /* WireframeProtocol.swift */; };
 		CFDD22302500F41200FA89A7 /* PostListWireframeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFDD222F2500F41200FA89A7 /* PostListWireframeTests.swift */; };
+		CFDD223325011C5200FA89A7 /* PostListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFDD223225011C5200FA89A7 /* PostListTableViewCell.swift */; };
+		CFDD2235250126BF00FA89A7 /* CurrentUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFDD2234250126BF00FA89A7 /* CurrentUser.swift */; };
+		CFDD22392501524400FA89A7 /* PostListViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFDD22382501524400FA89A7 /* PostListViewControllerTests.swift */; };
+		CFDD223B2501525500FA89A7 /* PostListInteractorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFDD223A2501525500FA89A7 /* PostListInteractorTests.swift */; };
+		CFDD223D2501526700FA89A7 /* PostListPresenterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFDD223C2501526700FA89A7 /* PostListPresenterTests.swift */; };
+		CFDD22402501544200FA89A7 /* MockUITableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFDD223F2501544200FA89A7 /* MockUITableView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -91,11 +97,17 @@
 		CFD4005025001A7E00A557C0 /* LoginPresenterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginPresenterTests.swift; sourceTree = "<group>"; };
 		CFDD221F2500E23700FA89A7 /* PostListInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostListInteractor.swift; sourceTree = "<group>"; };
 		CFDD22222500E28200FA89A7 /* PostListPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostListPresenter.swift; sourceTree = "<group>"; };
-		CFDD22252500E34900FA89A7 /* PostViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostViewModel.swift; sourceTree = "<group>"; };
+		CFDD22252500E34900FA89A7 /* PostListPostViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostListPostViewModel.swift; sourceTree = "<group>"; };
 		CFDD22272500E51300FA89A7 /* PostClientProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostClientProtocol.swift; sourceTree = "<group>"; };
 		CFDD22292500E62F00FA89A7 /* JPHPostClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JPHPostClient.swift; sourceTree = "<group>"; };
 		CFDD222B2500E9A300FA89A7 /* WireframeProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WireframeProtocol.swift; sourceTree = "<group>"; };
 		CFDD222F2500F41200FA89A7 /* PostListWireframeTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostListWireframeTests.swift; sourceTree = "<group>"; };
+		CFDD223225011C5200FA89A7 /* PostListTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostListTableViewCell.swift; sourceTree = "<group>"; };
+		CFDD2234250126BF00FA89A7 /* CurrentUser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrentUser.swift; sourceTree = "<group>"; };
+		CFDD22382501524400FA89A7 /* PostListViewControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostListViewControllerTests.swift; sourceTree = "<group>"; };
+		CFDD223A2501525500FA89A7 /* PostListInteractorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostListInteractorTests.swift; sourceTree = "<group>"; };
+		CFDD223C2501526700FA89A7 /* PostListPresenterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostListPresenterTests.swift; sourceTree = "<group>"; };
+		CFDD223F2501544200FA89A7 /* MockUITableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockUITableView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -154,6 +166,7 @@
 				CF2210ED24FF8B7800FA36D6 /* Assets.xcassets */,
 				CF2210EF24FF8B7800FA36D6 /* LaunchScreen.storyboard */,
 				CF2210F224FF8B7800FA36D6 /* Info.plist */,
+				CFDD2234250126BF00FA89A7 /* CurrentUser.swift */,
 			);
 			path = DBCodingChallenge;
 			sourceTree = "<group>";
@@ -161,6 +174,7 @@
 		CF2210FA24FF8B7800FA36D6 /* DBCodingChallengeTests */ = {
 			isa = PBXGroup;
 			children = (
+				CFDD223E2501541900FA89A7 /* Mocks */,
 				CF2210FB24FF8B7800FA36D6 /* DBCodingChallengeTests.swift */,
 				CF2210FD24FF8B7800FA36D6 /* Info.plist */,
 			);
@@ -268,11 +282,12 @@
 			isa = PBXGroup;
 			children = (
 				CFDD22212500E25500FA89A7 /* DataClients */,
+				CFDD223125011C3200FA89A7 /* UI */,
 				CFD3D3C42500379700836D83 /* PostListWireframe.swift */,
 				CFD3D3C72500394000836D83 /* PostListViewController.swift */,
 				CFDD221F2500E23700FA89A7 /* PostListInteractor.swift */,
 				CFDD22222500E28200FA89A7 /* PostListPresenter.swift */,
-				CFDD22252500E34900FA89A7 /* PostViewModel.swift */,
+				CFDD22252500E34900FA89A7 /* PostListPostViewModel.swift */,
 			);
 			path = Source;
 			sourceTree = "<group>";
@@ -290,8 +305,27 @@
 			isa = PBXGroup;
 			children = (
 				CFDD222F2500F41200FA89A7 /* PostListWireframeTests.swift */,
+				CFDD22382501524400FA89A7 /* PostListViewControllerTests.swift */,
+				CFDD223A2501525500FA89A7 /* PostListInteractorTests.swift */,
+				CFDD223C2501526700FA89A7 /* PostListPresenterTests.swift */,
 			);
 			path = Tests;
+			sourceTree = "<group>";
+		};
+		CFDD223125011C3200FA89A7 /* UI */ = {
+			isa = PBXGroup;
+			children = (
+				CFDD223225011C5200FA89A7 /* PostListTableViewCell.swift */,
+			);
+			path = UI;
+			sourceTree = "<group>";
+		};
+		CFDD223E2501541900FA89A7 /* Mocks */ = {
+			isa = PBXGroup;
+			children = (
+				CFDD223F2501544200FA89A7 /* MockUITableView.swift */,
+			);
+			path = Mocks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -428,13 +462,15 @@
 			files = (
 				CFDD22202500E23700FA89A7 /* PostListInteractor.swift in Sources */,
 				CF22112724FFC39100FA36D6 /* UIView+Extensions.swift in Sources */,
+				CFDD2235250126BF00FA89A7 /* CurrentUser.swift in Sources */,
 				CFD3D3C82500394000836D83 /* PostListViewController.swift in Sources */,
 				CFDD222C2500E9A300FA89A7 /* WireframeProtocol.swift in Sources */,
 				CFDD22282500E51300FA89A7 /* PostClientProtocol.swift in Sources */,
 				CF22111924FF8EA200FA36D6 /* LoginInteractor.swift in Sources */,
 				CF22111724FF8E5F00FA36D6 /* LoginViewController.swift in Sources */,
 				CFDD22232500E28200FA89A7 /* PostListPresenter.swift in Sources */,
-				CFDD22262500E34900FA89A7 /* PostViewModel.swift in Sources */,
+				CFDD22262500E34900FA89A7 /* PostListPostViewModel.swift in Sources */,
+				CFDD223325011C5200FA89A7 /* PostListTableViewCell.swift in Sources */,
 				CF38E06924FFE2120046B7C1 /* UserClientProtocol.swift in Sources */,
 				CF22111D24FF8EFB00FA36D6 /* LoginWireframe.swift in Sources */,
 				CF2210E524FF8B7400FA36D6 /* AppDelegate.swift in Sources */,
@@ -454,10 +490,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CFDD223B2501525500FA89A7 /* PostListInteractorTests.swift in Sources */,
 				CF38E07C24FFF43E0046B7C1 /* LoginViewControllerTests.swift in Sources */,
 				CF22112224FF9D2B00FA36D6 /* LoginWireframeTests.swift in Sources */,
 				CF38E07E250003580046B7C1 /* LoginInteractorTests.swift in Sources */,
 				CFD4005125001A7E00A557C0 /* LoginPresenterTests.swift in Sources */,
+				CFDD223D2501526700FA89A7 /* PostListPresenterTests.swift in Sources */,
+				CFDD22392501524400FA89A7 /* PostListViewControllerTests.swift in Sources */,
+				CFDD22402501544200FA89A7 /* MockUITableView.swift in Sources */,
 				CFDD22302500F41200FA89A7 /* PostListWireframeTests.swift in Sources */,
 				CF2210FC24FF8B7800FA36D6 /* DBCodingChallengeTests.swift in Sources */,
 			);

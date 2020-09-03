@@ -27,5 +27,6 @@ class PostListWireframe: PostListWireframeProtocol {
         let postListViewController = self.postListViewController ?? self.createPostListViewController()
         let navigationController = UINavigationController(rootViewController: postListViewController)
         window.rootViewController = navigationController
+        window.makeKeyAndVisible()
     }
 }

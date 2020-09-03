@@ -8,7 +8,9 @@
 
 import Foundation
 
-struct PostViewModel {
+struct PostListPostViewModel: Equatable {
+    let id: Int
     let title: String
     let body: String
+    let favorite: Bool
 }

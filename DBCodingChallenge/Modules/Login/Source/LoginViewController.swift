@@ -57,6 +57,7 @@ class LoginViewController: UIViewController {
     
     private func setupHierarchy() {
         view.addSubview(verticalStackView)
+        verticalStackView.addArrangedSubview(UIView())
         verticalStackView.addArrangedSubview(horizontalStackView)
         verticalStackView.addArrangedSubview(UIView())
         verticalStackView.addArrangedSubview(loginButton)
@@ -84,13 +85,17 @@ class LoginViewController: UIViewController {
         loginButton.addTarget(self, action: #selector(loginButtonTapped), for: .touchUpInside)
         
         loginFeedbackLabel.font = .systemFont(ofSize: 14)
-        loginFeedbackLabel.textColor = .black
+        loginFeedbackLabel.textColor = .white
+        loginFeedbackLabel.textAlignment = .center
     }
     
     private func setupLayout() {
         verticalStackView.axis = .vertical
         verticalStackView.alignment = .fill
+        verticalStackView.distribution = .equalCentering
+        
         horizontalStackView.distribution = .fillEqually
+        
         innerVerticalStackView.axis = .vertical
         
         [verticalStackView, horizontalStackView, userIdLabel, innerVerticalStackView, userIdTextField, userIdTextFieldBorder, loginButton].forEach {
@@ -140,7 +145,6 @@ class LoginViewController: UIViewController {
     }
     
     @objc func loginButtonTapped() {
-        print("login button tapped")
         if let userIdText = userIdTextField.text,
             let userId = Int(userIdText) {
             loginInteractor.login(with: userId)
@@ -159,7 +163,7 @@ extension LoginViewController: LoginViewProtocol {
         DispatchQueue.main.async {
             self.loginFeedbackLabel.text = "Login erfolgreich. Hallo \(userViewModel.name)!"
 
-            self.perform(#selector(self.navigateToNextScreen), with: nil, afterDelay: 0.5)
+            self.perform(#selector(self.navigateToNextScreen), with: nil, afterDelay: 1)
         }
     }
     

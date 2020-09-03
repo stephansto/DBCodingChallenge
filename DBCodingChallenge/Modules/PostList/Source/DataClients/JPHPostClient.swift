@@ -17,8 +17,8 @@ class JPHPostClient: PostClientProtocol {
         URLSession.shared.dataTask(with: url) { (data, response, error) in
             if let jsonData = data {
                 do {
-                    let user = try JSONDecoder().decode([Post].self, from: jsonData)
-                    completion(.success(user))
+                    let posts = try JSONDecoder().decode([Post].self, from: jsonData)
+                    completion(.success(posts))
                 } catch {
                     completion(.failure(error))
                 }
