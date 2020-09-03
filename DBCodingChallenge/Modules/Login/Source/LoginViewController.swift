@@ -15,6 +15,7 @@ protocol LoginViewProtocol: class {
 
 class LoginViewController: UIViewController {
     let loginInteractor: LoginInteractorProtocol
+    let wireframe: WireframeProtocol
     
     let verticalStackView = UIStackView()
     let horizontalStackView = UIStackView()
@@ -27,8 +28,9 @@ class LoginViewController: UIViewController {
     
     var bottomConstraint: NSLayoutConstraint!
     
-    init(loginInteractor: LoginInteractorProtocol) {
+    init(loginInteractor: LoginInteractorProtocol, wireframe: WireframeProtocol) {
         self.loginInteractor = loginInteractor
+        self.wireframe = wireframe
         
         super.init(nibName: nil, bundle: nil)
     }
@@ -143,12 +145,12 @@ class LoginViewController: UIViewController {
             let userId = Int(userIdText) {
             loginInteractor.login(with: userId)
         } else {
-            loginFeedbackLabel.text = "Eingabe inkorrekt"
+            loginFeedbackLabel.text = "Eingabe ungültig."
         }
     }
     
-    @objc func showPostList() {
-        PostListWireframe().start(in: self.view.window)
+    @objc func navigateToNextScreen() {
+        wireframe.start(in: self.view.window, on: nil)
     }
 }
 
@@ -157,7 +159,7 @@ extension LoginViewController: LoginViewProtocol {
         DispatchQueue.main.async {
             self.loginFeedbackLabel.text = "Login erfolgreich. Hallo \(userViewModel.name)!"
 
-            self.perform(#selector(self.showPostList), with: nil, afterDelay: 0.5)
+            self.perform(#selector(self.navigateToNextScreen), with: nil, afterDelay: 0.5)
         }
     }
     

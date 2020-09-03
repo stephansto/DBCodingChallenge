@@ -1,15 +1,15 @@
 //
-//  LoginWireframeTests.swift
+//  PostListWireframeTests.swift
 //  DBCodingChallengeTests
 //
-//  Created by Storch, Stephan on 02.09.20.
+//  Created by Storch, Stephan on 03.09.20.
 //  Copyright © 2020 Storch, Stephan. All rights reserved.
 //
 
 import XCTest
 @testable import DBCodingChallenge
 
-class LoginWireframeTests: XCTestCase {
+class PostListWireframeTests: XCTestCase {
     class MockWireframe: WireframeProtocol {
         func start(in window: UIWindow?, on navigationController: UINavigationController?) {}
     }
@@ -18,10 +18,10 @@ class LoginWireframeTests: XCTestCase {
         func fetchUserWith(userId: Int, completion: @escaping (Result<User, Error>) -> Void) {}
     }
     
-    var sut: LoginWireframe!
+    var sut: PostListWireframe!
 
     override func setUpWithError() throws {
-        sut = LoginWireframe()
+        sut = PostListWireframe()
     }
 
     override func tearDownWithError() throws {
@@ -30,10 +30,11 @@ class LoginWireframeTests: XCTestCase {
 
     func testStartShowsLoginViewController() throws {
         let window = UIWindow()
-        let loginViewController = LoginViewController(loginInteractor: LoginInteractor(loginPresenter: LoginPresenter(), userClient: MockUserClient()), wireframe: MockWireframe())
-        sut.loginViewController = loginViewController
-        sut.start(in: window)
+        let postListViewController = PostListViewController(postListInteractor: PostListInteractor(postListPresenter: PostListPresenter()))
+        sut.postListViewController = postListViewController
+        sut.start(in: window, on: nil)
         
-        XCTAssertTrue(loginViewController === window.rootViewController!)
+        let navController = window.rootViewController as? UINavigationController
+        XCTAssertTrue(postListViewController === navController?.viewControllers[0])
     }
 }

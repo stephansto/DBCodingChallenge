@@ -16,13 +16,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         guard let windowScene = (scene as? UIWindowScene) else { return }
         self.window = UIWindow(windowScene: windowScene)
         
-        let loginPresenter = LoginPresenter()
-        let loginInteractor = LoginInteractor(loginPresenter: loginPresenter, userClient: JPHUserClient())
-        let loginViewController = LoginViewController(loginInteractor: loginInteractor)
-        loginPresenter.loginView = loginViewController
-        
         let loginWireframe = LoginWireframe()
-        loginWireframe.loginViewController = loginViewController
         loginWireframe.start(in: window)
     }
 

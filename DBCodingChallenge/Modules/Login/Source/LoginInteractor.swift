@@ -16,7 +16,7 @@ class LoginInteractor: LoginInteractorProtocol {
     let loginPresenter: LoginPresenterProtocol
     let userClient: UserClientProtocol
     
-    init(loginPresenter: LoginPresenterProtocol, userClient: UserClientProtocol) {
+    init(loginPresenter: LoginPresenterProtocol, userClient: UserClientProtocol = JPHUserClient()) {
         self.loginPresenter = loginPresenter
         self.userClient = userClient
     }

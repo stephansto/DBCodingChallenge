@@ -10,8 +10,9 @@ import XCTest
 @testable import DBCodingChallenge
 
 class LoginViewControllerTests: XCTestCase {
-    var sut: LoginViewController!
-    var mockLoginInteractor: MockLoginInteractor!
+    class MockWireframe: WireframeProtocol {
+        func start(in window: UIWindow?, on navigationController: UINavigationController?) {}
+    }
     
     class MockLoginInteractor: LoginInteractorProtocol {
         var loginWasCalledWithUserId: Int = 0
@@ -21,24 +22,27 @@ class LoginViewControllerTests: XCTestCase {
         }
     }
     
+    var sut: LoginViewController!
+    var mockLoginInteractor: MockLoginInteractor!
+    
     override func setUpWithError() throws {
         mockLoginInteractor = MockLoginInteractor()
-        sut = LoginViewController(loginInteractor: mockLoginInteractor)
+        sut = LoginViewController(loginInteractor: mockLoginInteractor, wireframe: MockWireframe())
     }
 
     override func tearDownWithError() throws {
         sut = nil
     }
 
-    func testLoginButtonTappedWithInvalidUserIdDoesNotTriggerInteractor() throws {
+    func testLoginButtonTappedWithInvalidUserIdDoesNotTriggerLoginOnInteractor() throws {
         sut.userIdTextField.text = "test"
         sut.loginButtonTapped()
         
         XCTAssertEqual(mockLoginInteractor.loginWasCalledWithUserId, 0)
-        XCTAssertEqual(sut.loginFeedbackLabel.text, "Eingabe inkorrekt")
+        XCTAssertEqual(sut.loginFeedbackLabel.text, "Eingabe ungültig.")
     }
     
-    func testLoginButtonTappedWithPossiblyValidUserIdTriggersInteractor() throws {
+    func testLoginButtonTappedWithPossiblyValidUserIdTriggersLoginOnInteractor() throws {
         sut.userIdTextField.text = "1"
         sut.loginButtonTapped()
         

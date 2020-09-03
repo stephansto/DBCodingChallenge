@@ -8,29 +8,24 @@
 
 import UIKit
 
-class PostListWireframe {
-    func start(in window: UIWindow?) {
-        guard let window = window else { return }
+protocol PostListWireframeProtocol: WireframeProtocol {}
+
+class PostListWireframe: PostListWireframeProtocol {
+    var postListViewController: PostListViewController?
+    
+    private func createPostListViewController() -> PostListViewController {
+        let postListPresenter = PostListPresenter()
+        let postListInteractor = PostListInteractor(postListPresenter: postListPresenter)
+        let postListViewController = PostListViewController(postListInteractor: postListInteractor)
+        postListPresenter.postListView = postListViewController
         
-        let postListViewController = PostListViewController()
+        return postListViewController
+    }
+    
+    func start(in window: UIWindow?, on navigationController: UINavigationController?) {
+        guard let window = window else { return }
+        let postListViewController = self.postListViewController ?? self.createPostListViewController()
         let navigationController = UINavigationController(rootViewController: postListViewController)
         window.rootViewController = navigationController
-        
-//        let postListInteractor = PostListInteractor(postClient: RemotePostClient())
-//        
-//        let postListViewController = PostListViewController()
-//        
-//        let postListPresenter = PostListPresenter()
-//        postListInteractor.presenter = postListPresenter
-//        postListPresenter.postListView = postListViewController
-//        postListViewController.interactor = postListInteractor
-//        
-//        let navigationController = UINavigationController(rootViewController: postListViewController)
-//        window.rootViewController = navigationController
-//        window.makeKeyAndVisible()
-//        
-//        if CurrentUser.shared.user == nil {
-//            LoginWireframe().showLogin(from: navigationController, animated: false)
-//        }
     }
 }

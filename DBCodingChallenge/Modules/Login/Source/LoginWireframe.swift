@@ -8,15 +8,24 @@
 
 import UIKit
 
-protocol LoginWireframeProtocol {
-    func start(in window: UIWindow?)
+protocol LoginWireframeProtocol: WireframeProtocol {
+//    func start(in window: UIWindow?)
 }
 
 class LoginWireframe: LoginWireframeProtocol {
     var loginViewController: LoginViewController?
     
-    func start(in window: UIWindow?) {
-        window?.rootViewController = loginViewController
+    private func createLoginViewController() -> LoginViewController {
+        let loginPresenter = LoginPresenter()
+        let loginInteractor = LoginInteractor(loginPresenter: loginPresenter)
+        let loginViewController = LoginViewController(loginInteractor: loginInteractor, wireframe: PostListWireframe())
+        loginPresenter.loginView = loginViewController
+        
+        return loginViewController
+    }
+    
+    func start(in window: UIWindow?, on navigationController: UINavigationController? = nil) {
+        window?.rootViewController = self.loginViewController ?? self.createLoginViewController()
         window?.makeKeyAndVisible()
     }
 }
