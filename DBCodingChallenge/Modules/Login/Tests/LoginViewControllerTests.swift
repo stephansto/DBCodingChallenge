@@ -45,17 +45,4 @@ class LoginViewControllerTests: XCTestCase {
         XCTAssertEqual(mockLoginInteractor.loginWasCalledWithUserId, 1)
         XCTAssertEqual(sut.loginFeedbackLabel.text, nil)
     }
-    
-    func testShowLoginSucceededShowsUserName() throws {
-        let userViewModel = DBCodingChallenge.UserViewModel(name: "Name", username: "Username")
-        sut.showLoginSucceeded(with: userViewModel)
-        
-       XCTAssertEqual(sut.loginFeedbackLabel.text, "Login erfolgreich, hallo Name")
-    }
-
-    func testShowLoginFailedShowsLoginFailedMessage() throws {
-        sut.showLoginFailed()
-        
-        XCTAssertEqual(sut.loginFeedbackLabel.text, "Login fehlgeschagen")
-    }
 }

@@ -8,7 +8,7 @@
 
 import UIKit
 
-protocol LoginViewProtocol: UIViewController {
+protocol LoginViewProtocol: class {
     func showLoginSucceeded(with userViewModel: UserViewModel)
     func showLoginFailed()
 }
@@ -146,12 +146,18 @@ class LoginViewController: UIViewController {
             loginFeedbackLabel.text = "Eingabe inkorrekt"
         }
     }
+    
+    @objc func showPostList() {
+        PostListWireframe().start(in: self.view.window)
+    }
 }
 
 extension LoginViewController: LoginViewProtocol {
     func showLoginSucceeded(with userViewModel: UserViewModel) {
         DispatchQueue.main.async {
             self.loginFeedbackLabel.text = "Login erfolgreich. Hallo \(userViewModel.name)!"
+
+            self.perform(#selector(self.showPostList), with: nil, afterDelay: 0.5)
         }
     }
     

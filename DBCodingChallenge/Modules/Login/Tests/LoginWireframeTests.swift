@@ -24,7 +24,7 @@ class LoginWireframeTests: XCTestCase {
         let window = UIWindow()
         
         let loginViewController = LoginViewController(loginInteractor: LoginInteractor(loginPresenter: LoginPresenter(), userClient: JPHUserClient()))
-        sut.loginView = loginViewController
+        sut.loginViewController = loginViewController
         sut.start(in: window)
         XCTAssertTrue(loginViewController === window.rootViewController!)
     }

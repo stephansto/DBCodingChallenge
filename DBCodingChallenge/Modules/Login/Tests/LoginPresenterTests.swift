@@ -11,7 +11,7 @@ import XCTest
 
 class LoginPresenterTests: XCTestCase {
     var sut: LoginPresenter!
-    var loginView: LoginViewProtocol!
+    var loginView: MockLoginView!
     
     class MockLoginView: LoginViewProtocol {
         var showLoginSuccededWithUserviewModel: UserViewModel? = nil
@@ -28,7 +28,7 @@ class LoginPresenterTests: XCTestCase {
 
     override func setUpWithError() throws {
         sut = LoginPresenter()
-        loginView = LoginViewController(loginInteractor: LoginInteractor(loginPresenter: sut, userClient: JPHUserClient()))
+        loginView = MockLoginView()
         sut.loginView = loginView
     }
 
@@ -38,14 +38,15 @@ class LoginPresenterTests: XCTestCase {
     }
     
     func testLoginSuccededShowsUserName() throws {
-        sut.loginSucceeded(with: User(id: 1, name: "Name", username: "Username"))
+        let user = User(id: 1, name: "Name", username: "Username")
+        sut.loginSucceeded(with: user)
         
-        XCTAssertEqual((loginView as! LoginViewController).loginFeedbackLabel.text, "Login erfolgreich. Hallo Name")
+        XCTAssertEqual(loginView.showLoginSuccededWithUserviewModel!.name, user.name)
     }
 
     func testLoginFailed() throws {
         sut.loginFailed()
         
-        XCTAssertEqual((loginView as! LoginViewController).loginFeedbackLabel.text, "Login fehlgeschagen")
+        XCTAssertTrue(loginView.showLoginFailedWasCalled)
     }
 }

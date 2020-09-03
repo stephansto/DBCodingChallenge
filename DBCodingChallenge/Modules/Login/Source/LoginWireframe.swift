@@ -13,10 +13,10 @@ protocol LoginWireframeProtocol {
 }
 
 class LoginWireframe: LoginWireframeProtocol {
-    var loginView: LoginViewProtocol?
+    var loginViewController: LoginViewController?
     
     func start(in window: UIWindow?) {
-        window?.rootViewController = loginView
+        window?.rootViewController = loginViewController
         window?.makeKeyAndVisible()
     }
 }

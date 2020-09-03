@@ -66,7 +66,7 @@ class LoginInteractorTests: XCTestCase {
         XCTAssertEqual(mockLoginPresenter.loginSucceededWasCalledWithUser!.id, 1)
     }
 
-    func testLoginFailed() throws {
+    func testLoginFailedTriggersLoginFailedOnPresenter() throws {
         sut.login(with: 999)
         
         wait(for: [expectation], timeout: 5)

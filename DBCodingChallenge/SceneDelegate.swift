@@ -22,7 +22,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         loginPresenter.loginView = loginViewController
         
         let loginWireframe = LoginWireframe()
-        loginWireframe.loginView = loginViewController
+        loginWireframe.loginViewController = loginViewController
         loginWireframe.start(in: window)
     }
 
