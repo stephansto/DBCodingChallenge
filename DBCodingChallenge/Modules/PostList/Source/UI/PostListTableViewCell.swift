@@ -10,7 +10,7 @@ import UIKit
 
 class PostListTableViewCell: UITableViewCell {
     
-    var postViewModel: PostListPostViewModel?
+    var postViewModel: PostViewModel?
     
     let titleBodyVerticalStackView = UIStackView()
     let buttonVerticalStackView = UIStackView()
@@ -77,7 +77,7 @@ class PostListTableViewCell: UITableViewCell {
         toggleFavoriteButton.heightAnchor.constraint(equalToConstant: 40).isActive = true
     }
     
-    func update(with postViewModel: PostListPostViewModel) {
+    func update(with postViewModel: PostViewModel) {
         titleLabel.text = postViewModel.title
         bodyLabel.text = postViewModel.body
         toggleFavoriteButton.isSelected = postViewModel.favorite

@@ -9,7 +9,7 @@
 import UIKit
 
 protocol PostListView: class {
-    func update(postViewModels: [PostListPostViewModel])
+    func update(postViewModels: [PostViewModel])
 }
 
 class PostListViewController: UIViewController {
@@ -22,8 +22,8 @@ class PostListViewController: UIViewController {
             showOnlyFavoritesButton.isSelected.toggle()
         }
     }
-    var postViewModels = [PostListPostViewModel]()
-    var favoritePostViewModels: [PostListPostViewModel] {
+    var postViewModels = [PostViewModel]()
+    var favoritePostViewModels: [PostViewModel] {
         return self.postViewModels.filter { $0.favorite }
     }
     
@@ -128,7 +128,7 @@ class PostListViewController: UIViewController {
 }
 
 extension PostListViewController: PostListView {
-    func update(postViewModels: [PostListPostViewModel]) {
+    func update(postViewModels: [PostViewModel]) {
         self.postViewModels = postViewModels
         DispatchQueue.main.async {
             self.tableView.reloadData()
@@ -140,7 +140,9 @@ extension PostListViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
         
-        PostDetailWireframe(postListPostViewModel: postViewModels[indexPath.row]).start(in: nil, on: navigationController)
+        let postDetailWireframe = PostDetailWireframe(postViewModel: postViewModels[indexPath.row])
+        postDetailWireframe.delegate = self
+        postDetailWireframe.start(in: nil, on: navigationController)
     }
 }
 
@@ -160,6 +162,12 @@ extension PostListViewController: UITableViewDataSource {
     
     @objc func toggleFavoriteButtonPressed(button: UIButton) {
         let postId = button.tag
+        postListInteractor.toggleFavoriteForPost(with: postId)
+    }
+}
+
+extension PostListViewController: PostDetailDelegate {
+    func postIsFavoriteWasChanged(for postId: Int) {
         postListInteractor.toggleFavoriteForPost(with: postId)
     }
 }

@@ -9,25 +9,20 @@
 import Foundation
 
 protocol PostDetailInteractorProtocol {
-    func onViewDidLoad()
+    func fetchComments()
 }
 
 class PostDetailInteractor: PostDetailInteractorProtocol {
     let postDetailPresenter: PostDetailPresenterProtocol
-    let postListPostViewModel: PostListPostViewModel
     
-    init(postDetailPresenter: PostDetailPresenterProtocol, postListPostViewModel: PostListPostViewModel) {
+    init(postDetailPresenter: PostDetailPresenterProtocol) {
         self.postDetailPresenter = postDetailPresenter
-        self.postListPostViewModel = postListPostViewModel
     }
     
-    func onViewDidLoad() {
-        fetchComments()
+    func fetchComments() {
         
-        postDetailPresenter.present(post: postListPostViewModel, and: [])
+        postDetailPresenter.present(comments: [])
     }
-    
-    private func fetchComments() {}
     
     
 }

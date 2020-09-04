@@ -9,14 +9,13 @@
 import Foundation
 
 protocol PostDetailPresenterProtocol {
-    func present(post: PostListPostViewModel, and comments: [Comment])
+    func present(comments: [Comment])
 }
 
 class PostDetailPresenter: PostDetailPresenterProtocol {
     weak var postDetailView: PostDetailView?
     
-    func present(post: PostListPostViewModel, and comments: [Comment]) {
-        postDetailView?.update(with: PostDetailViewModel(id: post.id, title: post.title, body: post
-            .body, favorite: post.favorite), and: [])
+    func present(comments: [Comment]) {
+        postDetailView?.update(with: [])
     }
 }

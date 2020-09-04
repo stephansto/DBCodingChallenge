@@ -17,7 +17,7 @@ class PostListPresenter: PostListPresenterProtocol {
     
     func presentFetchedPosts(_ posts: [Post], favoritePostIds: Set<Int>) {
         let postViewModels = posts.map {
-            PostListPostViewModel(id: $0.id, title: $0.title, body: $0.body, favorite: favoritePostIds.contains($0.id))
+            PostViewModel(id: $0.id, title: $0.title, body: $0.body, favorite: favoritePostIds.contains($0.id))
         }
         postListView?.update(postViewModels: postViewModels)
     }

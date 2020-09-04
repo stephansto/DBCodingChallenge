@@ -29,13 +29,13 @@ class PostListViewControllerTests: XCTestCase {
         sut = PostListViewController(postListInteractor: MockPostListInteractor())
         
         sut.postViewModels = [
-            PostListPostViewModel(
+            PostViewModel(
                 id: 2,
                 title: "Post 1",
                 body: "Body 1",
                 favorite: false
             ),
-            PostListPostViewModel(
+            PostViewModel(
                 id: 17,
                 title: "Post 2",
                 body: "Body 2",

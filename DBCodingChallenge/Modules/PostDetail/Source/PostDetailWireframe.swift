@@ -10,19 +10,25 @@ import UIKit
 
 protocol PostDetailWireframeProtocol: WireframeProtocol {}
 
+protocol PostDetailDelegate: class {
+    func postIsFavoriteWasChanged(for postId: Int)
+}
+
 class PostDetailWireframe: PostDetailWireframeProtocol {
-    let postListPostViewModel: PostListPostViewModel
+    let postViewModel: PostViewModel
     
     weak var postDetailViewController: PostDetailViewController?
     
-    init(postListPostViewModel: PostListPostViewModel) {
-        self.postListPostViewModel = postListPostViewModel
+    weak var delegate: PostDetailDelegate?
+    
+    init(postViewModel: PostViewModel) {
+        self.postViewModel = postViewModel
     }
     
     private func createPostDetailViewController() -> PostDetailViewController {
         let postDetailPresenter = PostDetailPresenter()
-        let postDetailInteractor = PostDetailInteractor(postDetailPresenter: postDetailPresenter, postListPostViewModel: postListPostViewModel)
-        let postDetailViewController = PostDetailViewController(postDetailInteractor: postDetailInteractor)
+        let postDetailInteractor = PostDetailInteractor(postDetailPresenter: postDetailPresenter)
+        let postDetailViewController = PostDetailViewController(postDetailInteractor: postDetailInteractor, postViewModel: postViewModel)
         postDetailViewController.wireframe = self
         postDetailPresenter.postDetailView = postDetailViewController
         
@@ -33,4 +39,6 @@ class PostDetailWireframe: PostDetailWireframeProtocol {
         guard let navigationController = navigationController else { return }
         navigationController.pushViewController(self.postDetailViewController ?? self.createPostDetailViewController(), animated: true)
     }
+    
+//    private func 
 }

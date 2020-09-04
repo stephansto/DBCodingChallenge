@@ -11,10 +11,10 @@ import XCTest
 
 class PostListPresenterTests: XCTestCase {
     class MockPostListView: PostListView {
-        var updateWasCalledWithPostListPostViewModels = [PostListPostViewModel]()
+        var updateWasCalledWithPostViewModels = [PostViewModel]()
         
-        func update(postViewModels: [PostListPostViewModel]) {
-            updateWasCalledWithPostListPostViewModels = postViewModels
+        func update(postViewModels: [PostViewModel]) {
+            updateWasCalledWithPostViewModels = postViewModels
         }
     }
     
@@ -49,10 +49,10 @@ class PostListPresenterTests: XCTestCase {
         sut.presentFetchedPosts(mockPostData, favoritePostIds: [5])
         
         XCTAssertEqual(
-            (sut.postListView as! MockPostListView).updateWasCalledWithPostListPostViewModels,
+            (sut.postListView as! MockPostListView).updateWasCalledWithPostViewModels,
                        [
-            PostListPostViewModel(id: 2, title: "title", body: "body", favorite: false),
-            PostListPostViewModel(id: 5, title: "title 2", body: "body 2", favorite: true)
+            PostViewModel(id: 2, title: "title", body: "body", favorite: false),
+            PostViewModel(id: 5, title: "title 2", body: "body 2", favorite: true)
         ])
     }
 
