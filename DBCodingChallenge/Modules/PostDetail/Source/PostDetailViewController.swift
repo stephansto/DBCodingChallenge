@@ -93,6 +93,7 @@ extension PostDetailViewController: UITableViewDataSource {
         if indexPath.section == 0 {
             let cell = tableView.dequeueReusableCell(withIdentifier: postListTableViewCellReuseIdentifier, for: indexPath) as! PostListTableViewCell
             cell.update(with: postViewModel)
+            cell.selectionStyle = .none
             cell.toggleFavoriteButton.addTarget(self, action: #selector(toggleFavoriteButtonPressed(button:)), for: .touchUpInside)
             return cell
         } else {

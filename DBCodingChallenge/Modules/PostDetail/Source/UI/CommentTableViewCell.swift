@@ -58,5 +58,6 @@ class CommentTableViewCell: UITableViewCell {
     func update(with commentViewModel: CommentViewModel) {
         userLabel.text = "User: \(commentViewModel.username)"
         bodyLabel.text = commentViewModel.body
+        selectionStyle = .none
     }
 }
