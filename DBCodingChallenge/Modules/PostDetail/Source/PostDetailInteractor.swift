@@ -10,4 +10,10 @@ import Foundation
 
 protocol PostDetailInteractorProtocol {}
 
-class PostDetailInteractor: PostDetailInteractorProtocol {}
+class PostDetailInteractor: PostDetailInteractorProtocol {
+    let postDetailPresenter: PostDetailPresenterProtocol
+    
+    init(postDetailPresenter: PostDetailPresenterProtocol) {
+        self.postDetailPresenter = postDetailPresenter
+    }
+}

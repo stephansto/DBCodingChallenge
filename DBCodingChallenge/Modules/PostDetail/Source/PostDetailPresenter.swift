@@ -10,4 +10,6 @@ import Foundation
 
 protocol PostDetailPresenterProtocol {}
 
-class PostDetailPresenter: PostDetailPresenterProtocol {}
+class PostDetailPresenter: PostDetailPresenterProtocol {
+    weak var postDetailView: PostDetailView?
+}

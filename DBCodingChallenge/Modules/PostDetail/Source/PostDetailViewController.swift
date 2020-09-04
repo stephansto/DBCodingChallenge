@@ -8,6 +8,21 @@
 
 import UIKit
 
-protocol PostDetailView {}
+protocol PostDetailView: class {}
 
-class PostDetailViewController: UIViewController {}
+class PostDetailViewController: UIViewController {
+    let postDetailInteractor: PostDetailInteractorProtocol
+    var wireframe: WireframeProtocol?
+    
+    init(postDetailInteractor: PostDetailInteractorProtocol) {
+        self.postDetailInteractor = postDetailInteractor
+        
+        super.init(nibName: nil, bundle: nil)
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+}
+
+extension PostDetailViewController: PostDetailView {}

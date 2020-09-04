@@ -139,6 +139,8 @@ extension PostListViewController: PostListView {
 extension PostListViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
+        
+        PostDetailWireframe().start(in: nil, on: navigationController)
     }
 }
 
