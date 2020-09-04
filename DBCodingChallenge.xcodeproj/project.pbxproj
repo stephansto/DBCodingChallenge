@@ -48,6 +48,10 @@
 		CFEB17AC25020E51008975A1 /* UIColor+Default.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFEB17AB25020E51008975A1 /* UIColor+Default.swift */; };
 		CFEB17AE25021EE2008975A1 /* UIFont+Default.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFEB17AD25021EE2008975A1 /* UIFont+Default.swift */; };
 		CFEB17B0250226AF008975A1 /* UIColor+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFEB17AF250226AF008975A1 /* UIColor+Extensions.swift */; };
+		CFEB17B625022EBA008975A1 /* PostDetailWireframe.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFEB17B525022EBA008975A1 /* PostDetailWireframe.swift */; };
+		CFEB17B825022EFD008975A1 /* PostDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFEB17B725022EFD008975A1 /* PostDetailViewController.swift */; };
+		CFEB17BA25022F54008975A1 /* PostDetailInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFEB17B925022F54008975A1 /* PostDetailInteractor.swift */; };
+		CFEB17BC25022F9A008975A1 /* PostDetailPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFEB17BB25022F9A008975A1 /* PostDetailPresenter.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -114,6 +118,10 @@
 		CFEB17AB25020E51008975A1 /* UIColor+Default.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Default.swift"; sourceTree = "<group>"; };
 		CFEB17AD25021EE2008975A1 /* UIFont+Default.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIFont+Default.swift"; sourceTree = "<group>"; };
 		CFEB17AF250226AF008975A1 /* UIColor+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Extensions.swift"; sourceTree = "<group>"; };
+		CFEB17B525022EBA008975A1 /* PostDetailWireframe.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostDetailWireframe.swift; sourceTree = "<group>"; };
+		CFEB17B725022EFD008975A1 /* PostDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostDetailViewController.swift; sourceTree = "<group>"; };
+		CFEB17B925022F54008975A1 /* PostDetailInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostDetailInteractor.swift; sourceTree = "<group>"; };
+		CFEB17BB25022F9A008975A1 /* PostDetailPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostDetailPresenter.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -200,6 +208,7 @@
 			isa = PBXGroup;
 			children = (
 				CFD3D3C32500375A00836D83 /* PostList */,
+				CFEB17B125022E74008975A1 /* PostDetail */,
 				CF22111524FF8E1300FA36D6 /* Login */,
 				CFDD222B2500E9A300FA89A7 /* WireframeProtocol.swift */,
 			);
@@ -337,6 +346,33 @@
 			path = Mocks;
 			sourceTree = "<group>";
 		};
+		CFEB17B125022E74008975A1 /* PostDetail */ = {
+			isa = PBXGroup;
+			children = (
+				CFEB17B325022E9B008975A1 /* Source */,
+				CFEB17B425022EA2008975A1 /* Tests */,
+			);
+			path = PostDetail;
+			sourceTree = "<group>";
+		};
+		CFEB17B325022E9B008975A1 /* Source */ = {
+			isa = PBXGroup;
+			children = (
+				CFEB17B525022EBA008975A1 /* PostDetailWireframe.swift */,
+				CFEB17B725022EFD008975A1 /* PostDetailViewController.swift */,
+				CFEB17B925022F54008975A1 /* PostDetailInteractor.swift */,
+				CFEB17BB25022F9A008975A1 /* PostDetailPresenter.swift */,
+			);
+			path = Source;
+			sourceTree = "<group>";
+		};
+		CFEB17B425022EA2008975A1 /* Tests */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Tests;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -470,6 +506,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				CFDD22202500E23700FA89A7 /* PostListInteractor.swift in Sources */,
+				CFEB17BA25022F54008975A1 /* PostDetailInteractor.swift in Sources */,
+				CFEB17B825022EFD008975A1 /* PostDetailViewController.swift in Sources */,
+				CFEB17B625022EBA008975A1 /* PostDetailWireframe.swift in Sources */,
 				CFEB17AC25020E51008975A1 /* UIColor+Default.swift in Sources */,
 				CF22112724FFC39100FA36D6 /* UIView+Extensions.swift in Sources */,
 				CFEB17B0250226AF008975A1 /* UIColor+Extensions.swift in Sources */,
@@ -483,6 +522,7 @@
 				CFDD22232500E28200FA89A7 /* PostListPresenter.swift in Sources */,
 				CFDD22262500E34900FA89A7 /* PostListPostViewModel.swift in Sources */,
 				CFDD223325011C5200FA89A7 /* PostListTableViewCell.swift in Sources */,
+				CFEB17BC25022F9A008975A1 /* PostDetailPresenter.swift in Sources */,
 				CF38E06924FFE2120046B7C1 /* UserClientProtocol.swift in Sources */,
 				CF22111D24FF8EFB00FA36D6 /* LoginWireframe.swift in Sources */,
 				CF2210E524FF8B7400FA36D6 /* AppDelegate.swift in Sources */,
