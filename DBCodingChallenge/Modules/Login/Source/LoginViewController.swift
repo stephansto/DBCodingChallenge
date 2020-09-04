@@ -78,7 +78,7 @@ class LoginViewController: UIViewController {
         userIdTextField.font = .systemFont(ofSize: 20)
         userIdTextField.textColor = UIColor.Default.primaryText
         userIdTextField.clearButtonMode = .whileEditing
-        userIdTextField.delegate = self
+        userIdTextField.addTarget(self, action: #selector(editingChanged), for: .editingChanged)
 
         userIdTextFieldBorder.backgroundColor = UIColor.Default.border
         
@@ -151,12 +151,14 @@ class LoginViewController: UIViewController {
         })
     }
     
+    private func showInvalidInputMessage(_ show: Bool) {
+        loginFeedbackLabel.text = show ? "Eingabe ungültig." : ""
+    }
+    
     @objc func loginButtonTapped() {
         if let userIdText = userIdTextField.text,
             let userId = Int(userIdText) {
             loginInteractor.login(with: userId)
-        } else {
-            loginFeedbackLabel.text = "Eingabe ungültig."
         }
     }
     
@@ -166,6 +168,12 @@ class LoginViewController: UIViewController {
     
     @objc func navigateToNextScreen() {
         wireframe.start(in: self.view.window, on: nil)
+    }
+    
+    @objc func editingChanged(textField: UITextField) {
+        guard let text = textField.text else { return }
+        loginButton.isEnabled = text.count > 0 && Int(text) != nil
+        showInvalidInputMessage(text.count > 0 && Int(text) == nil)
     }
 }
 
@@ -182,19 +190,5 @@ extension LoginViewController: LoginViewProtocol {
         DispatchQueue.main.async {
             self.loginFeedbackLabel.text = "Login fehlgeschagen"
         }
-    }
-}
-
-extension LoginViewController: UITextFieldDelegate {
-    func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
-        guard let text = textField.text else { return false }
-        let nextText = text + string
-        loginButton.isEnabled = nextText.count > 0 && Int(nextText) != nil
-        return true
-    }
-    
-    func textFieldShouldClear(_ textField: UITextField) -> Bool {
-        loginButton.isEnabled = false
-        return true
     }
 }
