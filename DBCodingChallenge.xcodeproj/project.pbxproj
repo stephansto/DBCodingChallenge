@@ -215,9 +215,9 @@
 		CF22111424FF8E0400FA36D6 /* Modules */ = {
 			isa = PBXGroup;
 			children = (
+				CF22111524FF8E1300FA36D6 /* Login */,
 				CFD3D3C32500375A00836D83 /* PostList */,
 				CFEB17B125022E74008975A1 /* PostDetail */,
-				CF22111524FF8E1300FA36D6 /* Login */,
 				CFDD222B2500E9A300FA89A7 /* WireframeProtocol.swift */,
 			);
 			path = Modules;
@@ -357,8 +357,6 @@
 		CFEB17B125022E74008975A1 /* PostDetail */ = {
 			isa = PBXGroup;
 			children = (
-				CFEB17C425025EF2008975A1 /* DataClients */,
-				CFEB17C125025CDC008975A1 /* UI */,
 				CFEB17B325022E9B008975A1 /* Source */,
 				CFEB17B425022EA2008975A1 /* Tests */,
 			);
@@ -368,6 +366,8 @@
 		CFEB17B325022E9B008975A1 /* Source */ = {
 			isa = PBXGroup;
 			children = (
+				CFEB17C425025EF2008975A1 /* DataClients */,
+				CFEB17C125025CDC008975A1 /* UI */,
 				CFEB17B525022EBA008975A1 /* PostDetailWireframe.swift */,
 				CFEB17B725022EFD008975A1 /* PostDetailViewController.swift */,
 				CFEB17B925022F54008975A1 /* PostDetailInteractor.swift */,

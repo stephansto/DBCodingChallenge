@@ -70,7 +70,7 @@ class LoginViewController: UIViewController {
     }
     
     private func setupViews() {
-        userIdLabel.text = "UserId:"
+        userIdLabel.text = "UserID:"
         userIdLabel.font = UIFont.Default.medium
         userIdLabel.textColor = UIColor.Default.primaryText
         
