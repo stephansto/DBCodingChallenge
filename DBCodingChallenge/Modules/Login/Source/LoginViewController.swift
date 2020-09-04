@@ -15,7 +15,7 @@ protocol LoginViewProtocol: class {
 
 class LoginViewController: UIViewController {
     let loginInteractor: LoginInteractorProtocol
-    let wireframe: WireframeProtocol
+    var wireframe: WireframeProtocol?
     
     let verticalStackView = UIStackView()
     let horizontalStackView = UIStackView()
@@ -28,9 +28,8 @@ class LoginViewController: UIViewController {
     
     var bottomConstraint: NSLayoutConstraint!
     
-    init(loginInteractor: LoginInteractorProtocol, wireframe: WireframeProtocol) {
+    init(loginInteractor: LoginInteractorProtocol) {
         self.loginInteractor = loginInteractor
-        self.wireframe = wireframe
         
         super.init(nibName: nil, bundle: nil)
     }
@@ -167,7 +166,7 @@ class LoginViewController: UIViewController {
     }
     
     @objc func navigateToNextScreen() {
-        wireframe.start(in: self.view.window, on: nil)
+        (wireframe as? LoginWireframe)?.wireframeAfterLogin?.start(in: self.view.window, on: nil)
     }
     
     @objc func editingChanged(textField: UITextField) {

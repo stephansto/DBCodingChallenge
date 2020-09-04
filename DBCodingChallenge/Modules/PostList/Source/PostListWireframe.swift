@@ -11,12 +11,13 @@ import UIKit
 protocol PostListWireframeProtocol: WireframeProtocol {}
 
 class PostListWireframe: PostListWireframeProtocol {
-    var postListViewController: PostListViewController?
+    weak var postListViewController: PostListViewController?
     
     private func createPostListViewController() -> PostListViewController {
         let postListPresenter = PostListPresenter()
         let postListInteractor = PostListInteractor(postListPresenter: postListPresenter)
         let postListViewController = PostListViewController(postListInteractor: postListInteractor)
+        postListViewController.wireframe = self
         postListPresenter.postListView = postListViewController
         
         return postListViewController

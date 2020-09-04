@@ -17,6 +17,8 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         self.window = UIWindow(windowScene: windowScene)
         
         let loginWireframe = LoginWireframe()
+        // define here what happnes after (re)login
+        loginWireframe.wireframeAfterLogin = PostListWireframe()
         loginWireframe.start(in: window)
     }
 

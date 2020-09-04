@@ -14,7 +14,7 @@ protocol PostListView: class {
 
 class PostListViewController: UIViewController {
     let postListInteractor: PostListInteractorProtocol
-    let wireframe: WireframeProtocol?
+    var wireframe: WireframeProtocol?
     
     var showOnlyFavorites = false {
         didSet {
@@ -35,9 +35,8 @@ class PostListViewController: UIViewController {
     
     let postListTableViewCellReuseIdentifier = "postListTableViewCell"
     
-    init(postListInteractor: PostListInteractorProtocol, wireframe: WireframeProtocol? = nil) {
+    init(postListInteractor: PostListInteractorProtocol) {
         self.postListInteractor = postListInteractor
-        self.wireframe = wireframe
         
         super.init(nibName: nil, bundle: nil)
     }

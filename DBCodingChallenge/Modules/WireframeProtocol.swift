@@ -8,6 +8,6 @@
 
 import UIKit
 
-protocol WireframeProtocol {
+protocol WireframeProtocol: class {
     func start(in window: UIWindow?, on navigationController: UINavigationController?)
 }

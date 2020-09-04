@@ -30,7 +30,8 @@ class LoginWireframeTests: XCTestCase {
 
     func testStartShowsLoginViewController() throws {
         let window = UIWindow()
-        let loginViewController = LoginViewController(loginInteractor: LoginInteractor(loginPresenter: LoginPresenter(), userClient: MockUserClient()), wireframe: MockWireframe())
+        let loginViewController = LoginViewController(loginInteractor: LoginInteractor(loginPresenter: LoginPresenter(), userClient: MockUserClient()))
+        loginViewController.wireframe = sut
         sut.loginViewController = loginViewController
         sut.start(in: window)
         

@@ -26,7 +26,7 @@ class PostListViewControllerTests: XCTestCase {
     var sut: PostListViewController!
 
     override func setUpWithError() throws {
-        sut = PostListViewController(postListInteractor: MockPostListInteractor(), wireframe: nil)
+        sut = PostListViewController(postListInteractor: MockPostListInteractor())
         
         sut.postViewModels = [
             PostListPostViewModel(

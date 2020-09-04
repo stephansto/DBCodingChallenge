@@ -15,7 +15,7 @@ class LoginViewControllerTests: XCTestCase {
     }
     
     class MockLoginInteractor: LoginInteractorProtocol {
-        var loginWasCalledWithUserId: Int = 0
+        var loginWasCalledWithUserId: Int = -1
         
         func login(with userId: Int) {
             loginWasCalledWithUserId = userId
@@ -27,7 +27,8 @@ class LoginViewControllerTests: XCTestCase {
     
     override func setUpWithError() throws {
         mockLoginInteractor = MockLoginInteractor()
-        sut = LoginViewController(loginInteractor: mockLoginInteractor, wireframe: MockWireframe())
+        sut = LoginViewController(loginInteractor: mockLoginInteractor)
+        sut.wireframe = MockWireframe()
     }
 
     override func tearDownWithError() throws {
@@ -38,8 +39,7 @@ class LoginViewControllerTests: XCTestCase {
         sut.userIdTextField.text = "test"
         sut.loginButtonTapped()
         
-        XCTAssertEqual(mockLoginInteractor.loginWasCalledWithUserId, 0)
-        XCTAssertEqual(sut.loginFeedbackLabel.text, "Eingabe ungültig.")
+        XCTAssertEqual(mockLoginInteractor.loginWasCalledWithUserId, -1)
     }
     
     func testLoginButtonTappedWithPossiblyValidUserIdTriggersLoginOnInteractor() throws {
