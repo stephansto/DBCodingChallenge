@@ -57,16 +57,17 @@ class PostListTableViewCell: UITableViewCell {
         buttonVerticalStackView.axis = .vertical
         
         titleLabel.textColor = UIColor.Default.primaryText
-        titleLabel.font = .systemFont(ofSize: 20, weight: .medium)
+        titleLabel.font = UIFont.Default.primaryCell
         titleLabel.numberOfLines = 0
         
         bodyLabel.textColor = UIColor.Default.secondaryText
-        bodyLabel.font = .systemFont(ofSize: 14)
+        bodyLabel.font = UIFont.Default.secondaryCell
         bodyLabel.numberOfLines = 3
         
         toggleFavoriteButton.setTitle("FAV", for: .normal)
         toggleFavoriteButton.backgroundColor = UIColor.Default.tint
         toggleFavoriteButton.setTitleColor(UIColor.Default.primaryText, for: .normal)
+        toggleFavoriteButton.layer.borderColor = UIColor.Default.border.cgColor
     }
     
     private func setupLayout() {

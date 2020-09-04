@@ -46,6 +46,8 @@
 		CFDD223D2501526700FA89A7 /* PostListPresenterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFDD223C2501526700FA89A7 /* PostListPresenterTests.swift */; };
 		CFDD22402501544200FA89A7 /* MockUITableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFDD223F2501544200FA89A7 /* MockUITableView.swift */; };
 		CFEB17AC25020E51008975A1 /* UIColor+Default.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFEB17AB25020E51008975A1 /* UIColor+Default.swift */; };
+		CFEB17AE25021EE2008975A1 /* UIFont+Default.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFEB17AD25021EE2008975A1 /* UIFont+Default.swift */; };
+		CFEB17B0250226AF008975A1 /* UIColor+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFEB17AF250226AF008975A1 /* UIColor+Extensions.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -110,6 +112,8 @@
 		CFDD223C2501526700FA89A7 /* PostListPresenterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostListPresenterTests.swift; sourceTree = "<group>"; };
 		CFDD223F2501544200FA89A7 /* MockUITableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockUITableView.swift; sourceTree = "<group>"; };
 		CFEB17AB25020E51008975A1 /* UIColor+Default.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Default.swift"; sourceTree = "<group>"; };
+		CFEB17AD25021EE2008975A1 /* UIFont+Default.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIFont+Default.swift"; sourceTree = "<group>"; };
+		CFEB17AF250226AF008975A1 /* UIColor+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Extensions.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -250,6 +254,8 @@
 			children = (
 				CF22112624FFC39100FA36D6 /* UIView+Extensions.swift */,
 				CFEB17AB25020E51008975A1 /* UIColor+Default.swift */,
+				CFEB17AD25021EE2008975A1 /* UIFont+Default.swift */,
+				CFEB17AF250226AF008975A1 /* UIColor+Extensions.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -466,7 +472,9 @@
 				CFDD22202500E23700FA89A7 /* PostListInteractor.swift in Sources */,
 				CFEB17AC25020E51008975A1 /* UIColor+Default.swift in Sources */,
 				CF22112724FFC39100FA36D6 /* UIView+Extensions.swift in Sources */,
+				CFEB17B0250226AF008975A1 /* UIColor+Extensions.swift in Sources */,
 				CFDD2235250126BF00FA89A7 /* CurrentUser.swift in Sources */,
+				CFEB17AE25021EE2008975A1 /* UIFont+Default.swift in Sources */,
 				CFD3D3C82500394000836D83 /* PostListViewController.swift in Sources */,
 				CFDD222C2500E9A300FA89A7 /* WireframeProtocol.swift in Sources */,
 				CFDD22282500E51300FA89A7 /* PostClientProtocol.swift in Sources */,

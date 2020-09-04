@@ -10,9 +10,9 @@ import UIKit
 
 extension UIColor {
     struct Default {
-        static let primaryBackground = UIColor.systemBlue
-        static let secondaryBackground = UIColor.systemTeal
-        static let tint = UIColor.systemIndigo
+        static let primaryBackground = UIColor(red: 30, green: 49, blue: 113, alpha: 1)
+        static let secondaryBackground = UIColor(red: 37, green: 92, blue: 143, alpha: 1)
+        static let tint = UIColor(red: 19, green: 30, blue: 55, alpha: 1)
         static let border = UIColor.white
         
         static let primaryText = UIColor.white

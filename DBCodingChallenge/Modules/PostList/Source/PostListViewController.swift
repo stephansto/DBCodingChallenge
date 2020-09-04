@@ -48,6 +48,7 @@ class PostListViewController: UIViewController {
         super.viewDidLoad()
         
         title = "My Posts"
+        view.backgroundColor = UIColor.Default.primaryBackground
 
         let navBarAppearance = UINavigationBarAppearance()
         navBarAppearance.configureWithOpaqueBackground()
@@ -89,7 +90,7 @@ class PostListViewController: UIViewController {
         [showAllButton, showOnlyFavoritesButton].forEach {
             $0.setTitleColor(UIColor.Default.inactive, for: .normal)
             $0.setTitleColor(UIColor.Default.primaryText, for: .selected)
-            $0.titleLabel?.font = .systemFont(ofSize: 20, weight: .medium)
+            $0.titleLabel?.font = UIFont.Default.mediumButton
             $0.backgroundColor = UIColor.Default.tint
             $0.addTarget(self, action: #selector(toggleShowOnlyFavoritesButtonPressed(button:)), for: .touchUpInside)
         }

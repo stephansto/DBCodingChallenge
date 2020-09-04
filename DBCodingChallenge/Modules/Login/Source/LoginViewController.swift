@@ -72,10 +72,10 @@ class LoginViewController: UIViewController {
     
     private func setupViews() {
         userIdLabel.text = "UserId:"
-        userIdLabel.font = .systemFont(ofSize: 20)
+        userIdLabel.font = UIFont.Default.medium
         userIdLabel.textColor = UIColor.Default.primaryText
         
-        userIdTextField.font = .systemFont(ofSize: 20)
+        userIdTextField.font = UIFont.Default.medium
         userIdTextField.textColor = UIColor.Default.primaryText
         userIdTextField.clearButtonMode = .whileEditing
         userIdTextField.addTarget(self, action: #selector(editingChanged), for: .editingChanged)
@@ -83,7 +83,7 @@ class LoginViewController: UIViewController {
         userIdTextFieldBorder.backgroundColor = UIColor.Default.border
         
         loginButton.setTitle("LOGIN", for: .normal)
-        loginButton.titleLabel?.font = .systemFont(ofSize: 28)
+        loginButton.titleLabel?.font = UIFont.Default.largeButton
         loginButton.setTitleColor(UIColor.Default.primaryText, for: .normal)
         loginButton.setTitleColor(UIColor.Default.inactive, for: .disabled)
         loginButton.backgroundColor = UIColor.Default.tint
@@ -91,7 +91,7 @@ class LoginViewController: UIViewController {
         loginButton.addTarget(self, action:
             #selector(loginButtonTapped), for: .touchUpInside)
         
-        loginFeedbackLabel.font = .systemFont(ofSize: 14)
+        loginFeedbackLabel.font = UIFont.Default.small
         loginFeedbackLabel.textColor = UIColor.Default.primaryText
         loginFeedbackLabel.textAlignment = .center
     }
