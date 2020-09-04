@@ -22,8 +22,7 @@ class PostListTableViewCell: UITableViewCell {
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         
-        backgroundColor = UIColor.orange.withAlphaComponent(0.8)
-        
+        backgroundColor = UIColor.Default.secondaryBackground
         setupHierarchy()
         setupViews()
         setupLayout()
@@ -49,7 +48,6 @@ class PostListTableViewCell: UITableViewCell {
         
         buttonVerticalStackView.addArrangedSubview(toggleFavoriteButton)
         buttonVerticalStackView.addArrangedSubview(UIView())
-        buttonVerticalStackView.backgroundColor = .yellow
     }
     
     private func setupViews() {
@@ -58,16 +56,17 @@ class PostListTableViewCell: UITableViewCell {
         
         buttonVerticalStackView.axis = .vertical
         
-        titleLabel.textColor = .white
+        titleLabel.textColor = UIColor.Default.primaryText
         titleLabel.font = .systemFont(ofSize: 20, weight: .medium)
         titleLabel.numberOfLines = 0
         
-        bodyLabel.textColor = .white
+        bodyLabel.textColor = UIColor.Default.secondaryText
         bodyLabel.font = .systemFont(ofSize: 14)
         bodyLabel.numberOfLines = 3
         
         toggleFavoriteButton.setTitle("FAV", for: .normal)
-        toggleFavoriteButton.backgroundColor = .brown
+        toggleFavoriteButton.backgroundColor = UIColor.Default.tint
+        toggleFavoriteButton.setTitleColor(UIColor.Default.primaryText, for: .normal)
     }
     
     private func setupLayout() {
@@ -81,6 +80,6 @@ class PostListTableViewCell: UITableViewCell {
         titleLabel.text = postViewModel.title
         bodyLabel.text = postViewModel.body
         toggleFavoriteButton.isSelected = postViewModel.favorite
-        toggleFavoriteButton.layer.borderWidth = postViewModel.favorite ? 3 : 1
+        toggleFavoriteButton.layer.borderWidth = postViewModel.favorite ? 3 : 0
     }
 }

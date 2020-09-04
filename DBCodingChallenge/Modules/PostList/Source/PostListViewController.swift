@@ -53,7 +53,7 @@ class PostListViewController: UIViewController {
         navBarAppearance.configureWithOpaqueBackground()
         navBarAppearance.titleTextAttributes = [.foregroundColor: UIColor.white]
         navBarAppearance.largeTitleTextAttributes = [.foregroundColor: UIColor.white]
-        navBarAppearance.backgroundColor = .orange
+        navBarAppearance.backgroundColor = UIColor.Default.primaryBackground
         navigationController?.navigationBar.standardAppearance = navBarAppearance
         navigationController?.navigationBar.scrollEdgeAppearance = navBarAppearance
         navigationController?.navigationBar.prefersLargeTitles = true
@@ -87,10 +87,10 @@ class PostListViewController: UIViewController {
         tableView.tableFooterView = UIView()
         
         [showAllButton, showOnlyFavoritesButton].forEach {
-            $0.setTitleColor(.lightGray, for: .normal)
-            $0.setTitleColor(.white, for: .selected)
+            $0.setTitleColor(UIColor.Default.inactive, for: .normal)
+            $0.setTitleColor(UIColor.Default.primaryText, for: .selected)
             $0.titleLabel?.font = .systemFont(ofSize: 20, weight: .medium)
-            $0.backgroundColor = .orange
+            $0.backgroundColor = UIColor.Default.tint
             $0.addTarget(self, action: #selector(toggleShowOnlyFavoritesButtonPressed(button:)), for: .touchUpInside)
         }
         

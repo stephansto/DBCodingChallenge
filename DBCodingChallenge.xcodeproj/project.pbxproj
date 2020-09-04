@@ -45,6 +45,7 @@
 		CFDD223B2501525500FA89A7 /* PostListInteractorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFDD223A2501525500FA89A7 /* PostListInteractorTests.swift */; };
 		CFDD223D2501526700FA89A7 /* PostListPresenterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFDD223C2501526700FA89A7 /* PostListPresenterTests.swift */; };
 		CFDD22402501544200FA89A7 /* MockUITableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFDD223F2501544200FA89A7 /* MockUITableView.swift */; };
+		CFEB17AC25020E51008975A1 /* UIColor+Default.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFEB17AB25020E51008975A1 /* UIColor+Default.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -108,6 +109,7 @@
 		CFDD223A2501525500FA89A7 /* PostListInteractorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostListInteractorTests.swift; sourceTree = "<group>"; };
 		CFDD223C2501526700FA89A7 /* PostListPresenterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostListPresenterTests.swift; sourceTree = "<group>"; };
 		CFDD223F2501544200FA89A7 /* MockUITableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockUITableView.swift; sourceTree = "<group>"; };
+		CFEB17AB25020E51008975A1 /* UIColor+Default.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Default.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -247,6 +249,7 @@
 			isa = PBXGroup;
 			children = (
 				CF22112624FFC39100FA36D6 /* UIView+Extensions.swift */,
+				CFEB17AB25020E51008975A1 /* UIColor+Default.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -461,6 +464,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				CFDD22202500E23700FA89A7 /* PostListInteractor.swift in Sources */,
+				CFEB17AC25020E51008975A1 /* UIColor+Default.swift in Sources */,
 				CF22112724FFC39100FA36D6 /* UIView+Extensions.swift in Sources */,
 				CFDD2235250126BF00FA89A7 /* CurrentUser.swift in Sources */,
 				CFD3D3C82500394000836D83 /* PostListViewController.swift in Sources */,

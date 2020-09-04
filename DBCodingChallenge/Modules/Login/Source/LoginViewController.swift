@@ -23,7 +23,7 @@ class LoginViewController: UIViewController {
     let userIdLabel = UILabel()
     let userIdTextField = UITextField()
     let userIdTextFieldBorder = UIView()
-    let loginButton = UIButton()
+    var loginButton = UIButton()
     let loginFeedbackLabel = UILabel()
     
     var bottomConstraint: NSLayoutConstraint!
@@ -46,7 +46,7 @@ class LoginViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        view.backgroundColor = .orange
+        view.backgroundColor = UIColor.Default.primaryBackground
         
         registerForKeyboardNotifications()
         
@@ -59,8 +59,8 @@ class LoginViewController: UIViewController {
         view.addSubview(verticalStackView)
         verticalStackView.addArrangedSubview(UIView())
         verticalStackView.addArrangedSubview(horizontalStackView)
-        verticalStackView.addArrangedSubview(UIView())
         verticalStackView.addArrangedSubview(loginButton)
+        verticalStackView.addArrangedSubview(UIView())
         verticalStackView.addArrangedSubview(loginFeedbackLabel)
         
         horizontalStackView.addArrangedSubview(userIdLabel)
@@ -73,19 +73,26 @@ class LoginViewController: UIViewController {
     private func setupViews() {
         userIdLabel.text = "UserId:"
         userIdLabel.font = .systemFont(ofSize: 20)
-        userIdLabel.textColor = .white
+        userIdLabel.textColor = UIColor.Default.primaryText
         
         userIdTextField.font = .systemFont(ofSize: 20)
-        userIdTextField.textColor = .white
+        userIdTextField.textColor = UIColor.Default.primaryText
+        userIdTextField.clearButtonMode = .whileEditing
+        userIdTextField.delegate = self
 
-        userIdTextFieldBorder.backgroundColor = .white
+        userIdTextFieldBorder.backgroundColor = UIColor.Default.border
         
         loginButton.setTitle("LOGIN", for: .normal)
         loginButton.titleLabel?.font = .systemFont(ofSize: 28)
-        loginButton.addTarget(self, action: #selector(loginButtonTapped), for: .touchUpInside)
+        loginButton.setTitleColor(UIColor.Default.primaryText, for: .normal)
+        loginButton.setTitleColor(UIColor.Default.inactive, for: .disabled)
+        loginButton.backgroundColor = UIColor.Default.tint
+        loginButton.isEnabled = false
+        loginButton.addTarget(self, action:
+            #selector(loginButtonTapped), for: .touchUpInside)
         
         loginFeedbackLabel.font = .systemFont(ofSize: 14)
-        loginFeedbackLabel.textColor = .white
+        loginFeedbackLabel.textColor = UIColor.Default.primaryText
         loginFeedbackLabel.textAlignment = .center
     }
     
@@ -153,6 +160,10 @@ class LoginViewController: UIViewController {
         }
     }
     
+    private func isPossiblyValid(userIdText: String) -> Bool {
+        return Int(userIdText) != nil
+    }
+    
     @objc func navigateToNextScreen() {
         wireframe.start(in: self.view.window, on: nil)
     }
@@ -171,5 +182,19 @@ extension LoginViewController: LoginViewProtocol {
         DispatchQueue.main.async {
             self.loginFeedbackLabel.text = "Login fehlgeschagen"
         }
+    }
+}
+
+extension LoginViewController: UITextFieldDelegate {
+    func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
+        guard let text = textField.text else { return false }
+        let nextText = text + string
+        loginButton.isEnabled = nextText.count > 0 && Int(nextText) != nil
+        return true
+    }
+    
+    func textFieldShouldClear(_ textField: UITextField) -> Bool {
+        loginButton.isEnabled = false
+        return true
     }
 }
