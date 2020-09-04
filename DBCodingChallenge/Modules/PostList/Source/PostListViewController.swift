@@ -140,7 +140,8 @@ extension PostListViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
         
-        let postDetailWireframe = PostDetailWireframe(postViewModel: postViewModels[indexPath.row])
+        let postViewModel = showOnlyFavorites ? favoritePostViewModels[indexPath.row] : postViewModels[indexPath.row]
+        let postDetailWireframe = PostDetailWireframe(postViewModel: postViewModel)
         postDetailWireframe.delegate = self
         postDetailWireframe.start(in: nil, on: navigationController)
     }

@@ -53,6 +53,9 @@
 		CFEB17BA25022F54008975A1 /* PostDetailInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFEB17B925022F54008975A1 /* PostDetailInteractor.swift */; };
 		CFEB17BC25022F9A008975A1 /* PostDetailPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFEB17BB25022F9A008975A1 /* PostDetailPresenter.swift */; };
 		CFEB17C025024374008975A1 /* CommentViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFEB17BF25024374008975A1 /* CommentViewModel.swift */; };
+		CFEB17C325025D11008975A1 /* CommentTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFEB17C225025D11008975A1 /* CommentTableViewCell.swift */; };
+		CFEB17C625025F11008975A1 /* CommentClientProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFEB17C525025F11008975A1 /* CommentClientProtocol.swift */; };
+		CFEB17C825025F96008975A1 /* JHPCommentClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFEB17C725025F96008975A1 /* JHPCommentClient.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -124,6 +127,9 @@
 		CFEB17B925022F54008975A1 /* PostDetailInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostDetailInteractor.swift; sourceTree = "<group>"; };
 		CFEB17BB25022F9A008975A1 /* PostDetailPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostDetailPresenter.swift; sourceTree = "<group>"; };
 		CFEB17BF25024374008975A1 /* CommentViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentViewModel.swift; sourceTree = "<group>"; };
+		CFEB17C225025D11008975A1 /* CommentTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentTableViewCell.swift; sourceTree = "<group>"; };
+		CFEB17C525025F11008975A1 /* CommentClientProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentClientProtocol.swift; sourceTree = "<group>"; };
+		CFEB17C725025F96008975A1 /* JHPCommentClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JHPCommentClient.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -351,6 +357,8 @@
 		CFEB17B125022E74008975A1 /* PostDetail */ = {
 			isa = PBXGroup;
 			children = (
+				CFEB17C425025EF2008975A1 /* DataClients */,
+				CFEB17C125025CDC008975A1 /* UI */,
 				CFEB17B325022E9B008975A1 /* Source */,
 				CFEB17B425022EA2008975A1 /* Tests */,
 			);
@@ -374,6 +382,23 @@
 			children = (
 			);
 			path = Tests;
+			sourceTree = "<group>";
+		};
+		CFEB17C125025CDC008975A1 /* UI */ = {
+			isa = PBXGroup;
+			children = (
+				CFEB17C225025D11008975A1 /* CommentTableViewCell.swift */,
+			);
+			path = UI;
+			sourceTree = "<group>";
+		};
+		CFEB17C425025EF2008975A1 /* DataClients */ = {
+			isa = PBXGroup;
+			children = (
+				CFEB17C525025F11008975A1 /* CommentClientProtocol.swift */,
+				CFEB17C725025F96008975A1 /* JHPCommentClient.swift */,
+			);
+			path = DataClients;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -519,9 +544,11 @@
 				CFEB17AE25021EE2008975A1 /* UIFont+Default.swift in Sources */,
 				CFD3D3C82500394000836D83 /* PostListViewController.swift in Sources */,
 				CFDD222C2500E9A300FA89A7 /* WireframeProtocol.swift in Sources */,
+				CFEB17C325025D11008975A1 /* CommentTableViewCell.swift in Sources */,
 				CFDD22282500E51300FA89A7 /* PostClientProtocol.swift in Sources */,
 				CF22111924FF8EA200FA36D6 /* LoginInteractor.swift in Sources */,
 				CF22111724FF8E5F00FA36D6 /* LoginViewController.swift in Sources */,
+				CFEB17C825025F96008975A1 /* JHPCommentClient.swift in Sources */,
 				CFDD22232500E28200FA89A7 /* PostListPresenter.swift in Sources */,
 				CFDD22262500E34900FA89A7 /* PostViewModel.swift in Sources */,
 				CFEB17C025024374008975A1 /* CommentViewModel.swift in Sources */,
@@ -534,6 +561,7 @@
 				CF2210E724FF8B7400FA36D6 /* SceneDelegate.swift in Sources */,
 				CFDD222A2500E62F00FA89A7 /* JPHPostClient.swift in Sources */,
 				CF38E06E24FFE2630046B7C1 /* Comment.swift in Sources */,
+				CFEB17C625025F11008975A1 /* CommentClientProtocol.swift in Sources */,
 				CF38E07924FFE5B20046B7C1 /* UserViewModel.swift in Sources */,
 				CFD3D3C52500379700836D83 /* PostListWireframe.swift in Sources */,
 				CF22111B24FF8ECC00FA36D6 /* LoginPresenter.swift in Sources */,

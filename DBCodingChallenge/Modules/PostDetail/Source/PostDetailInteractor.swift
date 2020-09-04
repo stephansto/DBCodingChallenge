@@ -9,20 +9,26 @@
 import Foundation
 
 protocol PostDetailInteractorProtocol {
-    func fetchComments()
+    func fetchComments(for commentId: Int)
 }
 
 class PostDetailInteractor: PostDetailInteractorProtocol {
     let postDetailPresenter: PostDetailPresenterProtocol
+    let commentClient: CommentClientProtocol
     
-    init(postDetailPresenter: PostDetailPresenterProtocol) {
+    init(postDetailPresenter: PostDetailPresenterProtocol, commentClient: CommentClientProtocol = JHPCommentClient()) {
         self.postDetailPresenter = postDetailPresenter
+        self.commentClient = commentClient
     }
     
-    func fetchComments() {
-        
-        postDetailPresenter.present(comments: [])
+    func fetchComments(for commentId: Int) {
+        commentClient.fetchComments(for: commentId) { [weak self] result in
+            switch result {
+            case .success(let comments):
+                self?.postDetailPresenter.present(comments)
+            case .failure(let error):
+                print(error)
+            }
+        }
     }
-    
-    
 }

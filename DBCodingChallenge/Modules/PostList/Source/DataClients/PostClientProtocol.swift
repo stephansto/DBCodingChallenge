@@ -7,6 +7,7 @@
 //
 
 import Foundation
+
 protocol PostClientProtocol {
     func fetchPosts(for user: User, completion: @escaping (Result<[Post], Error>) -> Void)
 }

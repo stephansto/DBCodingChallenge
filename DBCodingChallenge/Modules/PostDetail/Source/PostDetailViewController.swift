@@ -9,7 +9,7 @@
 import UIKit
 
 protocol PostDetailView: class {
-    func update(with comments: [CommentViewModel])
+    func update(with commentViewModels: [CommentViewModel])
 }
 
 class PostDetailViewController: UIViewController {
@@ -23,6 +23,7 @@ class PostDetailViewController: UIViewController {
     let tableView = UITableView()
     
     let postListTableViewCellReuseIdentifier = "postListTableViewCell"
+    let commentTableViewCellIdentifier = "commentTableViewCell"
     
     init(postDetailInteractor: PostDetailInteractorProtocol, postViewModel: PostViewModel) {
         self.postDetailInteractor = postDetailInteractor
@@ -49,7 +50,7 @@ class PostDetailViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
 
-        postDetailInteractor.fetchComments()
+        postDetailInteractor.fetchComments(for: postViewModel.id)
     }
     
     override func viewWillDisappear(_ animated: Bool) {
@@ -67,6 +68,7 @@ class PostDetailViewController: UIViewController {
     private func setupViews() {
         tableView.dataSource = self
         tableView.register(PostListTableViewCell.self, forCellReuseIdentifier: postListTableViewCellReuseIdentifier)
+        tableView.register(CommentTableViewCell.self, forCellReuseIdentifier: commentTableViewCellIdentifier)
         tableView.tableFooterView = UIView()
     }
     
@@ -77,8 +79,11 @@ class PostDetailViewController: UIViewController {
 }
 
 extension PostDetailViewController: PostDetailView {
-    func update(with comments: [CommentViewModel]) {
-        
+    func update(with commentViewModels: [CommentViewModel]) {
+        self.commentViewModels = commentViewModels
+        DispatchQueue.main.async {
+            self.tableView.reloadData()
+        }
     }
 }
 
@@ -91,8 +96,21 @@ extension PostDetailViewController: UITableViewDataSource {
             cell.toggleFavoriteButton.addTarget(self, action: #selector(toggleFavoriteButtonPressed(button:)), for: .touchUpInside)
             return cell
         } else {
-            return UITableViewCell()
+            let cell = tableView.dequeueReusableCell(withIdentifier: commentTableViewCellIdentifier, for: indexPath) as! CommentTableViewCell
+            cell.update(with: commentViewModels[indexPath.row])
+            return cell
         }
+    }
+    
+    func numberOfSections(in tableView: UITableView) -> Int {
+        return 2
+    }
+    
+    func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+        if section == 1 {
+            return "Comments"
+        }
+        return ""
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {

@@ -9,9 +9,6 @@
 import UIKit
 
 class PostListTableViewCell: UITableViewCell {
-    
-    var postViewModel: PostViewModel?
-    
     let titleBodyVerticalStackView = UIStackView()
     let buttonVerticalStackView = UIStackView()
     let horizontalStackView = UIStackView()
@@ -23,6 +20,7 @@ class PostListTableViewCell: UITableViewCell {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         
         backgroundColor = UIColor.Default.secondaryBackground
+        
         setupHierarchy()
         setupViews()
         setupLayout()
