@@ -33,6 +33,8 @@ class PostListViewController: UIViewController {
     let showAllButton = UIButton()
     let showOnlyFavoritesButton = UIButton()
     
+    let postListTableViewCellReuseIdentifier = "postListTableViewCell"
+    
     init(postListInteractor: PostListInteractorProtocol, wireframe: WireframeProtocol? = nil) {
         self.postListInteractor = postListInteractor
         self.wireframe = wireframe
@@ -84,7 +86,7 @@ class PostListViewController: UIViewController {
     private func setupViews() {
         tableView.delegate = self
         tableView.dataSource = self
-        tableView.register(PostListTableViewCell.self, forCellReuseIdentifier: "postListTableViewCell")
+        tableView.register(PostListTableViewCell.self, forCellReuseIdentifier: postListTableViewCellReuseIdentifier)
         tableView.tableFooterView = UIView()
         
         [showAllButton, showOnlyFavoritesButton].forEach {
@@ -143,7 +145,7 @@ extension PostListViewController: UITableViewDelegate {
 
 extension PostListViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "postListTableViewCell", for: indexPath) as! PostListTableViewCell
+        let cell = tableView.dequeueReusableCell(withIdentifier: postListTableViewCellReuseIdentifier, for: indexPath) as! PostListTableViewCell
         let postViewModel = showOnlyFavorites ? favoritePostViewModels[indexPath.row] : postViewModels[indexPath.row]
         cell.update(with: postViewModel)
         cell.toggleFavoriteButton.tag = postViewModel.id
