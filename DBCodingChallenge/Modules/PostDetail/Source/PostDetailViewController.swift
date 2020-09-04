@@ -8,7 +8,9 @@
 
 import UIKit
 
-protocol PostDetailView: class {}
+protocol PostDetailView: class {
+    func update(with post: PostDetailViewModel, and comments: [CommentViewModel])
+}
 
 class PostDetailViewController: UIViewController {
     let postDetailInteractor: PostDetailInteractorProtocol
@@ -23,6 +25,19 @@ class PostDetailViewController: UIViewController {
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        title = "Comments"
+        view.backgroundColor = UIColor.Default.secondaryBackground
+        
+        postDetailInteractor.onViewDidLoad()
+    }
 }
 
-extension PostDetailViewController: PostDetailView {}
+extension PostDetailViewController: PostDetailView {
+    func update(with post: PostDetailViewModel, and comments: [CommentViewModel]) {
+        
+    }
+}

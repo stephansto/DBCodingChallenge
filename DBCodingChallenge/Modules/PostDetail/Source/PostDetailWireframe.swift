@@ -11,11 +11,17 @@ import UIKit
 protocol PostDetailWireframeProtocol: WireframeProtocol {}
 
 class PostDetailWireframe: PostDetailWireframeProtocol {
+    let postListPostViewModel: PostListPostViewModel
+    
     weak var postDetailViewController: PostDetailViewController?
+    
+    init(postListPostViewModel: PostListPostViewModel) {
+        self.postListPostViewModel = postListPostViewModel
+    }
     
     private func createPostDetailViewController() -> PostDetailViewController {
         let postDetailPresenter = PostDetailPresenter()
-        let postDetailInteractor = PostDetailInteractor(postDetailPresenter: postDetailPresenter)
+        let postDetailInteractor = PostDetailInteractor(postDetailPresenter: postDetailPresenter, postListPostViewModel: postListPostViewModel)
         let postDetailViewController = PostDetailViewController(postDetailInteractor: postDetailInteractor)
         postDetailViewController.wireframe = self
         postDetailPresenter.postDetailView = postDetailViewController
